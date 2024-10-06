@@ -1,43 +1,38 @@
 import React from "react";
 
-const Card = ({imageurl,title}) => {
+const Card = ({ imageurl, title, description, date }) => {
   return (
-    <div>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img
-          src="https://source.unsplash.com/random"
-          alt=""
-          className="w-full"
-        />
-        <div className="px-6 py-4">
-          <div className="font-bold text-purple-500 text-xl mb-2">
-            Photo by John Doe
+    <div className="flex justify-center items-center min-h-screen h-fit">
+      <div className="max-w-[720px] mx-auto">
+        <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+          <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
+            <img
+              src={imageurl}
+              alt="card-image"
+              className="object-cover w-full h-full"
+            />
           </div>
-          <ul>
-            <li>
-              <strong>Views: </strong>
-              4000
-            </li>
-            <li>
-              <strong>Downloads: </strong>
-              300
-            </li>
-            <li>
-              <strong>Likes: </strong>
-              400
-            </li>
-          </ul>
-        </div>
-        <div className="px-6 py-4">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-            #tag1
-          </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-            #tag2
-          </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-            #tag3
-          </span>
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-2">
+              <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                {title}
+              </p>
+              <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                {date}
+              </p>
+            </div>
+            <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+              {description}
+            </p>
+          </div>
+          <div className="p-6 pt-0">
+            <button
+              className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+              type="button"
+            >
+              Read More
+            </button>
+          </div>
         </div>
       </div>
     </div>
